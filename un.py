@@ -23,10 +23,11 @@ def get_min_id(col_data):
     return min_idx
 
 def main():
-    rows=int(input("Введіть кількість рядків: "))
-    cols=int(input("Введіть кількість стовпців: "))
-
+    
+    rows=2
+    cols=2
     matrix=[]
+    
     for i in range(rows):
         
         row = []
@@ -48,7 +49,8 @@ def main():
 
         max_id = get_max_id(col_el)
         min_id = get_min_id(col_el)
-
+        
+        print(f"Стовпець {j+1}: Max = {col_el[max_id]}, Min = {col_el[min_id]}")
         matrix[max_id][j], matrix[min_id][j] = matrix[min_id][j], matrix[max_id][j]
 
     print("Матриця після перестанови")
